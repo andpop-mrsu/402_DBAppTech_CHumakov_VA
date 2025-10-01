@@ -1,0 +1,27 @@
+{
+    "name": "tanner/hangman",
+    "description": "Game Hangman",
+    "type": "project",
+    "bin": [
+        "bin/hangman"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Tanner\\Hangman\\": "src/"
+        },
+    "files": [
+        "src/Controller.php",
+        "src/View.php",
+        "src/Game.php"
+    ]
+    },
+    "authors": [
+        {
+            "name": "SakatoGin",
+            "email": "vachumak0v@yandex.ru"
+        }
+    ],
+    "require": {
+        "wp-cli/php-cli-tools": "^0.12.6"
+    }
+}
