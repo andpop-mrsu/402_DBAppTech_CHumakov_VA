@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hangman — браузерная версия (Task06)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Браузерная версия игры «Виселица» (ЛР-6), JavaScript + HTML + CSS."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="container">
+          <h1 class="title">Игра «Виселица»</h1>
+          <p class="subtitle">
+            Task06 — браузерное приложение на JavaScript (без базы данных)
+          </p>
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="container grid">
+          <section class="panel">
+            <h2 class="panel__title">Начало игры</h2>
+            <label class="field">
+              <span class="field__label">Имя игрока</span>
+              <input
+                id="playerName"
+                class="field__input"
+                type="text"
+                placeholder="Введите имя"
+              />
+            </label>
+            <div class="buttons-row">
+              <button id="startButton" class="button button--primary">
+                Начать игру
+              </button>
+              <button id="newGameButton" class="button" disabled>
+                Новая игра
+              </button>
+            </div>
+            <p class="hint">После начала игры вводите по одной латинской букве (a–z).</p>
+          </section>
+
+          <section class="panel">
+            <h2 class="panel__title">Игровое поле</h2>
+            <div class="game-layout">
+              <pre id="gallows" class="gallows"></pre>
+              <div class="game-info">
+                <div class="game-row">
+                  <span class="label">Слово:</span>
+                  <span id="maskedWord" class="value value--word">—</span>
+                </div>
+                <div class="game-row">
+                  <span class="label">Ошибки:</span>
+                  <span id="errors" class="value">0 / 6</span>
+                </div>
+                <div class="game-row">
+                  <span class="label">Использованные буквы:</span>
+                  <span id="guessedLetters" class="value">—</span>
+                </div>
+
+                <form id="guessForm" class="guess-form">
+                  <label class="field field--inline">
+                    <span class="field__label">Буква</span>
+                    <input
+                      id="letterInput"
+                      class="field__input field__input--small"
+                      type="text"
+                      maxlength="1"
+                      autocomplete="off"
+                      inputmode="latin"
+                    />
+                  </label>
+                  <button id="guessButton" class="button button--primary" type="submit">
+                    Угадать
+                  </button>
+                </form>
+
+                <p id="message" class="message">
+                  Введите имя и нажмите «Начать игру».
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <p class="footer__text">
+            ЛР-6 «Реализация игры в виде браузерного приложения на языке JavaScript».
+            Без хранения данных в базе (IndexedDB будет подключена в следующей работе).
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="./src/controller.js"></script>
+  </body>
+</html>
